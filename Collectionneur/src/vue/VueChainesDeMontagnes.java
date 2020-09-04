@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 public class VueChainesDeMontagnes extends Vue {
 
@@ -30,30 +31,22 @@ public class VueChainesDeMontagnes extends Vue {
 		super.activerControles();
 	}
 	
-	public void afficherChainesDeMontagnes(List<modele.ChaineDeMontagne> collections)
+	public void afficherChainesDeMontagnes(List<modele.ChaineDeMontagne> chainesDeMontagnes)
 	{
 		int position = 1;
-		for(modele.ChaineDeMontagne collection : collections)
-		{
-			Button libelle = (Button)lookup("#categorie-" + position);
-			System.out.println(collection.getNom());
-			libelle.setText(collection.getNom());
-			libelle.setId(collection.getId()+""); // l'id est changé mais on n'a plus besoin de recuperer l'objet
-			
-			libelle.setOnAction(new EventHandler<ActionEvent>() 
-			{
-	            @Override public void handle(ActionEvent e) 
-	            {
-	            	Logger.logMsg(Logger.INFO, "Bouton Collection active");
-	            	Button bouton = (Button)e.getSource();
-	            	controleur.actionOuvrirChaineDeMontagne(Integer.parseInt(bouton.getId()));
-	            }
-	        });
-
-			position++;
-			if(position > 8) break;
-		}
+		VBox vueChainesDeMontagnes = (VBox)lookup("#liste-chaines-de-montagnes");
+		System.out.println(vueChainesDeMontagnes);
+		vueChainesDeMontagnes.getChildren().clear();
 		
+		for(modele.ChaineDeMontagne c : chainesDeMontagnes)
+		{
+			
+			Logger.logMsg(Logger.INFO,"Chaine de montagne recue par la vue " + c.getNom());
+			Pane nouvelleChaineDeMontagne = new Pane();
+			nouvelleChaineDeMontagne.getStyleClass().add("chaine-de-montagne");
+			nouvelleChaineDeMontagne.getChildren().add(new Label(c.getNom()));
+			vueChainesDeMontagnes.getChildren().add((nouvelleChaineDeMontagne));
+		}
 		
 	}
 	

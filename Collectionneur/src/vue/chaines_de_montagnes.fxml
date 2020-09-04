@@ -48,121 +48,42 @@
                   </Button>
                </children>
             </VBox>
-                <AnchorPane layoutX="151.0" layoutY="60.0" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="1085.0" style="-fx-background-color: transparent;">
-                     <children>
-                        <FlowPane prefWidth="1085.0">
-                           <children>
-                              <Pane prefHeight="160.0" prefWidth="245.0" styleClass="chaine_de_montagne">
-                                 <FlowPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
-                                 <children>
-                                    <Button id="categorie-1" alignment="CENTER" layoutX="28.0" layoutY="55.0" prefHeight="48.0" prefWidth="181.0" text="Lampes">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </Pane>
-                              <Pane prefHeight="160.0" prefWidth="245.0" styleClass="chaine_de_montagne">
-                                 <FlowPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
-                                 <children>
-                                    <Button id="categorie-2" alignment="CENTER" layoutX="28.0" layoutY="55.0" prefHeight="48.0" prefWidth="181.0" text="Lampes">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </Pane>
-                              <Pane prefHeight="160.0" prefWidth="245.0" styleClass="chaine_de_montagne">
-                                 <FlowPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
-                                 <children>
-                                    <Button id="categorie-3" alignment="CENTER" layoutX="28.0" layoutY="55.0" prefHeight="48.0" prefWidth="181.0" text="Lampes">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </Pane>
-                              <Pane prefHeight="160.0" prefWidth="245.0" styleClass="chaine_de_montagne">
-                                 <FlowPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
-                                 <children>
-                                    <Button id="categorie-4" alignment="CENTER" layoutX="28.0" layoutY="55.0" prefHeight="48.0" prefWidth="181.0" text="Lampes">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </Pane>
-                              <Pane prefHeight="160.0" prefWidth="245.0" styleClass="chaine_de_montagne">
-                                 <FlowPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
-                                 <children>
-                                    <Button id="categorie-5" alignment="CENTER" layoutX="28.0" layoutY="55.0" prefHeight="48.0" prefWidth="181.0" text="Lampes">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </Pane>
-                              <Pane prefHeight="160.0" prefWidth="245.0" styleClass="chaine_de_montagne">
-                                 <FlowPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
-                                 <children>
-                                    <Button id="categorie-6" alignment="CENTER" layoutX="28.0" layoutY="55.0" prefHeight="48.0" prefWidth="181.0" text="Lampes">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </Pane>
-                              <Pane prefHeight="160.0" prefWidth="245.0" styleClass="chaine_de_montagne">
-                                 <FlowPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
-                                 <children>
-                                    <Button id="categorie-7" alignment="CENTER" layoutX="28.0" layoutY="55.0" prefHeight="48.0" prefWidth="181.0" text="Lampes">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </Pane>
-                              <Pane prefHeight="160.0" prefWidth="245.0" styleClass="chaine_de_montagne">
-                                 <FlowPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
-                                 <children>
-                                    <Button id="categorie-8" alignment="CENTER" layoutX="28.0" layoutY="55.0" prefHeight="48.0" prefWidth="181.0" text="Lampes">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </Pane>
-
-                           </children>
-                        </FlowPane>
-                     </children>
-                  </AnchorPane>
-            <FlowPane id="resume-des-chaines-de-montagnes" hgap="10.0" layoutX="152.0" layoutY="481.0" prefHeight="130.0" prefWidth="1085.0" vgap="10.0">
+            <VBox id="liste-chaines-de-montagnes" layoutX="143.0" layoutY="59.0" prefHeight="547.0" prefWidth="555.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="65.0" prefWidth="836.0" style="-fx-background-color: none; -fx-text-fill: black;" text="RÉSUMÉ des CHAINES DE MONTAGNES" textOverrun="CLIP">
+                  <Pane prefHeight="91.0" prefWidth="555.0" styleClass="chaine-de-montagne">
+                     <children>
+                        <Label layoutX="18.0" layoutY="22.0" prefHeight="53.0" prefWidth="416.0" styleClass="titre" text="Alpes">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="91.0" prefWidth="555.0" styleClass="chaine-de-montagne">
+                     <children>
+                        <Label layoutX="18.0" layoutY="19.0" prefHeight="53.0" prefWidth="416.0" styleClass="titre" text="Himalaya">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="91.0" prefWidth="555.0" styleClass="chaine-de-montagne">
+                     <children>
+                        <Label layoutX="18.0" layoutY="19.0" prefHeight="53.0" prefWidth="416.0" styleClass="titre" text="Cordillère des Andes">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <FlowPane id="resume-des-chaines-de-montagnes" hgap="10.0" layoutX="767.0" layoutY="138.0" prefHeight="359.0" prefWidth="469.0" vgap="10.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="65.0" prefWidth="439.0" style="-fx-background-color: none; -fx-text-fill: black;" text="RÉSUMÉ" textOverrun="CLIP">
                      <font>
                         <Font name="System Bold" size="44.0" />
-                     </font>
-                  </Label>
-                  <Label prefHeight="66.0" prefWidth="213.0" textFill="#3c1700">
-                     <font>
-                        <Font name="Nakula" size="36.0" />
                      </font>
                   </Label>
                   <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
@@ -180,7 +101,7 @@
                         <Image url="@decoration/lune-noire.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="66.0" prefWidth="505.0" text="modifié 2020/08/17" textFill="#3c1700">
+                  <Label prefHeight="66.0" prefWidth="359.0" text="modifié 2020/08/17" textFill="#3c1700">
                      <font>
                         <Font name="Nakula" size="36.0" />
                      </font>

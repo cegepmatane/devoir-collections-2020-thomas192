@@ -11,8 +11,8 @@ public class Controleur {
 
 	public static Vue selectionnerVuePrincipale()
 	{
-		ChaineDeMontagneDAO collectionDAO = new ChaineDeMontagneDAO();
-		VueChainesDeMontagnes.getInstance().afficherChainesDeMontagnes(collectionDAO.listerChainesDeMontagnes());
+		ChaineDeMontagneDAO chaineDeMontagneDAO = new ChaineDeMontagneDAO();
+		VueChainesDeMontagnes.getInstance().afficherChainesDeMontagnes(chaineDeMontagneDAO.listerChainesDeMontagnes());
 		return VueChainesDeMontagnes.getInstance();
 	}
 		
