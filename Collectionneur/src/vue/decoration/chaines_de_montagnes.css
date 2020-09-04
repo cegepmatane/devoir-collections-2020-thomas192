@@ -1,0 +1,93 @@
+/*
+ *
+https://commons.wikimedia.org/wiki/File:Corner_Ornament_Black_Down_Right.svg
+*/
+#fenetre
+{
+    -fx-background-color:#fff;
+}
+#espace-travail
+{
+    -fx-background-color: #dddddd;//#FBFCFC;
+    -fx-background-radius:2em 2em 2em 2em;
+    -fx-padding:2em;
+}
+#entete
+{
+    -fx-background-color: linear-gradient(from 25% 25% to 80% 100%, #97bef0, white);
+
+}
+#entete Label
+{
+    -fx-text-fill : white;    
+}
+#entete #sous-titre
+{
+    -fx-border-color:black;
+    -fx-background-color:white;
+}
+#entete #sous-titre Label
+{
+    -fx-text-fill : black;
+}
+
+#menu
+{
+    -fx-background-color: #aaa;
+}
+
+#menu Button
+{
+    -fx-background-color: #aaa;
+    -fx-border-radius: 0px;
+    -fx-border-insets: 0px 0px 0px 0px;
+    -fx-cursor:hand;
+}
+
+#menu Button:hover{
+    -fx-background-color: #333333;
+    //-fx-border-width: 0px 0px 0px 3px;
+    -fx-border-color: white;
+    -fx-border-style: solid;
+}
+#menu Button:pressed
+{
+    -fx-background-color: #cccccc;   
+}
+
+#espace
+{
+    -fx-background-color:  white;
+}
+#resume-des-chaines-de-montagnes
+{
+    -fx-background-color: linear-gradient(from 25% 25% to 80% 100%, #97bef0, white);
+    -fx-border-color: black;    
+}
+
+Pane.chaine_de_montagne
+{
+    -fx-background-radius: 20px;
+    -fx-background-color: rgba(0, 0, 0, 0.05);
+    -fx-margin: 15px;
+    -fx-min-width:200;
+    -fx-border-color: black;
+    -fx-border-radius: 25px;  
+}
+
+ScrollPane,
+ScrollPane > .viewport
+{
+    -fx-background-color:transparent;
+}
+
+ScrollPane > .viewport
+{
+    -fx-padding: 5 5 5 5;
+}
+
+AnchorPane FlowPane Pane Button
+{
+    -fx-background-color:transparent;    
+}
+
