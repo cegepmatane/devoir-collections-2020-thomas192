@@ -16,8 +16,8 @@ public class ControleurChainesDeMontagnes extends Controleur{
 	// RECEPTION des EVENEMENTS
 	public void actionOuvrirChaineDeMontagne(int numero)
 	{
-		ChaineDeMontagneDAO collectionDAO = new ChaineDeMontagneDAO();
-		VueChaineDeMontagne.getInstance().afficherChaineDeMontagne(collectionDAO.detaillerChaineDeMontagne(numero));
+		ChaineDeMontagneDAO chaineDeMontagneDAO = new ChaineDeMontagneDAO();
+		VueChaineDeMontagne.getInstance().afficherChaineDeMontagne(chaineDeMontagneDAO.listerSommetsParChaineDeMontagne(numero));
 		Navigateur.getInstance().afficherVue(VueChaineDeMontagne.getInstance());
 	}
 

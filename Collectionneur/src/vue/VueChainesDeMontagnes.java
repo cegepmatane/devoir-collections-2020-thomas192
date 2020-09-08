@@ -6,10 +6,12 @@ import com.sun.media.jfxmedia.logging.Logger;
 import controleur.ControleurChainesDeMontagnes;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
@@ -42,9 +44,25 @@ public class VueChainesDeMontagnes extends Vue {
 		{
 			
 			Logger.logMsg(Logger.INFO,"Chaine de montagne recue par la vue " + c.getNom());
-			Pane nouvelleChaineDeMontagne = new Pane();
+			
+			Button actionConsulter = new Button("Consulter");
+			
+			actionConsulter.setId(c.getId()+"");
+			actionConsulter.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent e) {
+					Button source = (Button)e.getSource();
+					Logger.logMsg(Logger.INFO, "Clic sur la chaine de montagne " + source.getId());
+				}
+			});
+			
+			
+			HBox nouvelleChaineDeMontagne = new HBox();
+			nouvelleChaineDeMontagne.setAlignment(Pos.CENTER_LEFT);
 			nouvelleChaineDeMontagne.getStyleClass().add("chaine-de-montagne");
 			nouvelleChaineDeMontagne.getChildren().add(new Label(c.getNom()));
+			nouvelleChaineDeMontagne.getChildren().add(actionConsulter);
+			
 			vueChainesDeMontagnes.getChildren().add((nouvelleChaineDeMontagne));
 		}
 		

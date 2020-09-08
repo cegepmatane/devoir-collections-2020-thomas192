@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -48,35 +49,21 @@
                   </Button>
                </children>
             </VBox>
-            <VBox id="liste-chaines-de-montagnes" layoutX="143.0" layoutY="59.0" prefHeight="547.0" prefWidth="555.0">
+            <VBox id="liste-chaines-de-montagnes" layoutX="143.0" layoutY="59.0" prefHeight="547.0" prefWidth="555.0" spacing="10.0">
                <children>
-                  <Pane prefHeight="91.0" prefWidth="555.0" styleClass="chaine-de-montagne">
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="chaine-de-montagne">
                      <children>
-                        <Label layoutX="18.0" layoutY="22.0" prefHeight="53.0" prefWidth="416.0" styleClass="titre" text="Alpes">
+                        <Label prefHeight="97.0" prefWidth="403.0" styleClass="titre" text="Alpes">
                            <font>
-                              <Font size="36.0" />
+                              <Font size="31.0" />
                            </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
                         </Label>
+                        <Button mnemonicParsing="false" prefHeight="97.0" prefWidth="138.0" styleClass="action-consulter" text="Consulter" />
                      </children>
-                  </Pane>
-                  <Pane prefHeight="91.0" prefWidth="555.0" styleClass="chaine-de-montagne">
-                     <children>
-                        <Label layoutX="18.0" layoutY="19.0" prefHeight="53.0" prefWidth="416.0" styleClass="titre" text="Himalaya">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="91.0" prefWidth="555.0" styleClass="chaine-de-montagne">
-                     <children>
-                        <Label layoutX="18.0" layoutY="19.0" prefHeight="53.0" prefWidth="416.0" styleClass="titre" text="Cordillère des Andes">
-                           <font>
-                              <Font size="36.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
+                  </HBox>
                </children>
             </VBox>
             <FlowPane id="resume-des-chaines-de-montagnes" hgap="10.0" layoutX="767.0" layoutY="138.0" prefHeight="359.0" prefWidth="469.0" vgap="10.0">

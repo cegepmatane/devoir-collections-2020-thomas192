@@ -39,7 +39,7 @@ public class ChaineDeMontagneDAO {
 		return listeChainesDeMontagnes;
 	}
 
-	public ChaineDeMontagne detaillerChaineDeMontagne(int numero)
+	public ChaineDeMontagne listerSommetsParChaineDeMontagne(int numero)
 	{
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
 		
