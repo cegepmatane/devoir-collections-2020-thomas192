@@ -3,10 +3,14 @@ package controleur;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import donnee.ChaineDeMontagneDAO;
+import donnee.SommetDAO;
 import vue.Navigateur;
 import vue.VueChaineDeMontagne;
 
 public class ControleurChainesDeMontagnes extends Controleur{
+	
+	protected ChaineDeMontagneDAO chaineDeMontagneDAO = new ChaineDeMontagneDAO();
+	protected SommetDAO sommetDAO = new SommetDAO();
 
 	public ControleurChainesDeMontagnes()
 	{
@@ -14,10 +18,14 @@ public class ControleurChainesDeMontagnes extends Controleur{
 	}
 	
 	// RECEPTION des EVENEMENTS
-	public void actionOuvrirChaineDeMontagne(int numero)
+	public void actionConsulterChaineDeMontagne(int id)
 	{
-		ChaineDeMontagneDAO chaineDeMontagneDAO = new ChaineDeMontagneDAO();
-		VueChaineDeMontagne.getInstance().afficherChaineDeMontagne(chaineDeMontagneDAO.listerSommetsParChaineDeMontagne(numero));
+		
+		Logger.logMsg(Logger.INFO, "ControleurChainesDeMontagnes.actionConsulterChaineDeMontagne("+id+")");
+		
+		VueChaineDeMontagne.getInstance().afficherChaineDeMontagne(chaineDeMontagneDAO.detaillerChaineDeMontagne(id));
+		VueChaineDeMontagne.getInstance().afficherSommets(sommetDAO.listerSommetsParChaineDeMontagne(id));
+		
 		Navigateur.getInstance().afficherVue(VueChaineDeMontagne.getInstance());
 	}
 
