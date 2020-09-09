@@ -14,6 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import modele.ChaineDeMontagne;
 
 public class VueChainesDeMontagnes extends Vue {
 
@@ -33,17 +34,16 @@ public class VueChainesDeMontagnes extends Vue {
 		super.activerControles();
 	}
 	
-	public void afficherChainesDeMontagnes(List<modele.ChaineDeMontagne> chainesDeMontagnes)
+	public void afficherChainesDeMontagnes(List<ChaineDeMontagne> chainesDeMontagnes)
 	{
-		int position = 1;
 		VBox vueChainesDeMontagnes = (VBox)lookup("#liste-chaines-de-montagnes");
 		System.out.println(vueChainesDeMontagnes);
 		vueChainesDeMontagnes.getChildren().clear();
 		
-		for(modele.ChaineDeMontagne c : chainesDeMontagnes)
+		for(ChaineDeMontagne c : chainesDeMontagnes)
 		{
 			
-			Logger.logMsg(Logger.INFO,"Chaine de montagne recue par la vue " + c.getNom());
+			Logger.logMsg(Logger.INFO,"Chaine de montagne recue par la vue : " + c.getNom());
 			
 			Button actionConsulter = new Button("Consulter");
 			
@@ -53,6 +53,7 @@ public class VueChainesDeMontagnes extends Vue {
 				public void handle(ActionEvent e) {
 					Button source = (Button)e.getSource();
 					Logger.logMsg(Logger.INFO, "Clic sur la chaine de montagne " + source.getId());
+					controleur.actionConsulterChaineDeMontagne(Integer.parseInt(source.getId()));
 				}
 			});
 			
@@ -60,8 +61,8 @@ public class VueChainesDeMontagnes extends Vue {
 			HBox nouvelleChaineDeMontagne = new HBox();
 			nouvelleChaineDeMontagne.setAlignment(Pos.CENTER_LEFT);
 			nouvelleChaineDeMontagne.getStyleClass().add("chaine-de-montagne");
-			nouvelleChaineDeMontagne.getChildren().add(new Label(c.getNom()));
 			nouvelleChaineDeMontagne.getChildren().add(actionConsulter);
+			nouvelleChaineDeMontagne.getChildren().add(new Label(c.getNom()));
 			
 			vueChainesDeMontagnes.getChildren().add((nouvelleChaineDeMontagne));
 		}
