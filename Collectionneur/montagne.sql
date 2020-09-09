@@ -56,10 +56,10 @@ CREATE TABLE public.chainedemontagne (
 ALTER TABLE public.chainedemontagne OWNER TO postgres;
 
 --
--- Name: collection_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: chainedemontagne_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.collection_id_seq
+CREATE SEQUENCE public.chainedemontagne_id_seq
     AS integer
     START WITH 1
     INCREMENT BY 1
@@ -68,13 +68,13 @@ CREATE SEQUENCE public.collection_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.collection_id_seq OWNER TO postgres;
+ALTER TABLE public.chainedemontagne_id_seq OWNER TO postgres;
 
 --
--- Name: collection_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: chainedemontagne_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE public.collection_id_seq OWNED BY public.chainedemontagne.id;
+ALTER SEQUENCE public.chainedemontagne_id_seq OWNED BY public.chainedemontagne.id;
 
 
 --
@@ -117,7 +117,7 @@ ALTER SEQUENCE public.sommet_id_seq OWNED BY public.sommet.id;
 -- Name: chainedemontagne id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.chainedemontagne ALTER COLUMN id SET DEFAULT nextval('public.collection_id_seq'::regclass);
+ALTER TABLE ONLY public.chainedemontagne ALTER COLUMN id SET DEFAULT nextval('public.chainedemontagne_id_seq'::regclass);
 
 
 --
@@ -135,9 +135,9 @@ INSERT INTO public.chainedemontagne VALUES (1, 'Alpes
 ', 'Les Alpes sont une chaîne de montagnes qui s''étend en Europe, recouvrant la frontière nord de l''Italie, le Sud-Est de la France, Monaco, la Suisse, le Liechtenstein, l''Autriche, le Sud de l''Allemagne et la Slovénie. Les Alpes culminent à 4 809 mètres, au sommet du mont Blanc.');
 INSERT INTO public.chainedemontagne VALUES (2, 'Cordillère des Andes', 'La cordillère des Andes, qui s''étend le long de la côte ouest de l''Amérique du Sud, compte parmi les plus grandes chaînes de montagnes du monde. Ses reliefs variés comprennent des glaciers, volcans, plaines, déserts, lacs et forêts. Les montagnes abritent des sites archéologiques de l''époque précolombienne, ainsi qu''une faune diversifiée, avec des chinchillas et des condors. Depuis le Venezuela, au nord, la cordillère traverse la Colombie, l''Équateur, le Pérou, la Bolivie, l''Argentine et le Chili.');
 INSERT INTO public.chainedemontagne VALUES (3, 'Himalaya', 'L''Himalaya, ou chaîne de l''Himalaya, est un ensemble de chaînes de montagnes s''étirant sur plus de 2 400 km de long et large de 250 à 400 km, qui sépare le sous-continent indien du plateau tibétain dans le Sud de l''Asie.');
-INSERT INTO public.chainedemontagne VALUES (5, 'Pyrénées', 'Les Pyrénées sont une chaîne de montagnes séparant la péninsule Ibérique du reste de l''Europe. Elles s''étendent sur plus de 430 km entre l''Espagne et la France et atteignent plus de 3 400 mètres d''altitude. Des sentiers de randonnée sillonnent toute la longueur de la chaîne, et des parcs nationaux proposent des circuits plus courts. Des dizaines de stations de ski sont situées des deux côtés des Pyrénées. Andorre est un minuscule État souverain au cœur des montagnes.');
-INSERT INTO public.chainedemontagne VALUES (6, 'Montagnes Rocheuses', 'Les montagnes Rocheuses s''étendent sur près de 5 000 kilomètres, des provinces de la Colombie-Britannique et de l''Alberta au Canada jusqu''aux États de l''Idaho, du Montana, du Wyoming, du Colorado et enfin du Nouveau-Mexique aux États-Unis. La chaîne offre des zones sauvages spectaculaires, une nature variée et des lacs alpins. Le parc national des montagnes Rocheuses du Colorado est traversé par de nombreux sentiers de randonnée et par la célèbre Trail Ridge Road, un axe routier pittoresque de 77 kilomètres qui culmine à 3 700 mètres d''altitude.');
-INSERT INTO public.chainedemontagne VALUES (7, 'Cordillère du Kunlun', 'La cordillère du Kunlun ou Kunlun est une chaîne de hautes montagnes dont l''extrémité occidentale se situe près de la frontière entre la République populaire de Chine et l''Inde, puis qui longe la limite des provinces du Xinjiang et du Tibet et se prolonge à l''est dans celle du Qinghai.');
+INSERT INTO public.chainedemontagne VALUES (4, 'Pyrénées', 'Les Pyrénées sont une chaîne de montagnes séparant la péninsule Ibérique du reste de l''Europe. Elles s''étendent sur plus de 430 km entre l''Espagne et la France et atteignent plus de 3 400 mètres d''altitude. Des sentiers de randonnée sillonnent toute la longueur de la chaîne, et des parcs nationaux proposent des circuits plus courts. Des dizaines de stations de ski sont situées des deux côtés des Pyrénées. Andorre est un minuscule État souverain au cœur des montagnes.');
+INSERT INTO public.chainedemontagne VALUES (5, 'Montagnes Rocheuses', 'Les montagnes Rocheuses s''étendent sur près de 5 000 kilomètres, des provinces de la Colombie-Britannique et de l''Alberta au Canada jusqu''aux États de l''Idaho, du Montana, du Wyoming, du Colorado et enfin du Nouveau-Mexique aux États-Unis. La chaîne offre des zones sauvages spectaculaires, une nature variée et des lacs alpins. Le parc national des montagnes Rocheuses du Colorado est traversé par de nombreux sentiers de randonnée et par la célèbre Trail Ridge Road, un axe routier pittoresque de 77 kilomètres qui culmine à 3 700 mètres d''altitude.');
+INSERT INTO public.chainedemontagne VALUES (6, 'Cordillère du Kunlun', 'La cordillère du Kunlun ou Kunlun est une chaîne de hautes montagnes dont l''extrémité occidentale se situe près de la frontière entre la République populaire de Chine et l''Inde, puis qui longe la limite des provinces du Xinjiang et du Tibet et se prolonge à l''est dans celle du Qinghai.');
 
 
 --
@@ -146,7 +146,6 @@ INSERT INTO public.chainedemontagne VALUES (7, 'Cordillère du Kunlun', 'La cord
 
 INSERT INTO public.sommet VALUES (1, 'Mont Blanc', 4810, 1);
 INSERT INTO public.sommet VALUES (2, 'Mont Maudit', 4465, 1);
-INSERT INTO public.sommet VALUES (3, 'Dôme du Goûter', 4304, 1);
 INSERT INTO public.sommet VALUES (4, 'Mont Blanc du Tacul', 4248, 1);
 INSERT INTO public.sommet VALUES (5, 'Grande Rocheuse', 4102, 1);
 INSERT INTO public.sommet VALUES (6, 'Aconcagua', 6959, 2);
@@ -160,43 +159,44 @@ INSERT INTO public.sommet VALUES (13, 'Lhotse', 8501, 3);
 INSERT INTO public.sommet VALUES (14, 'Makalu', 8462, 3);
 INSERT INTO public.sommet VALUES (15, 'Nanga Parbat', 8125, 3);
 INSERT INTO public.sommet VALUES (16, 'Vignemale ', 3298, 4);
-INSERT INTO public.sommet VALUES (17, 'Pic du Marboré
-', 3248, 4);
-INSERT INTO public.sommet VALUES (18, 'Pic de Perdiguère', 3222, 4);
-INSERT INTO public.sommet VALUES (19, 'Pic de Balaïtous', 3144, 4);
 INSERT INTO public.sommet VALUES (20, 'Pic de Taillon', 3144, 4);
 INSERT INTO public.sommet VALUES (21, 'Pic Gannett', 4207, 5);
 INSERT INTO public.sommet VALUES (22, 'Pic Borah', 3861, 5);
 INSERT INTO public.sommet VALUES (23, 'Mont Elbert', 4401, 5);
 INSERT INTO public.sommet VALUES (24, 'Mont Robson', 3954, 5);
-INSERT INTO public.sommet VALUES (25, 'Mont Columbia', 3747, NULL);
+INSERT INTO public.sommet VALUES (25, 'Mont Columbia', 3747, 5);
 INSERT INTO public.sommet VALUES (26, 'Kongur', 7649, 6);
 INSERT INTO public.sommet VALUES (27, 'Ulugh Muztagh', 6973, 6);
 INSERT INTO public.sommet VALUES (28, 'Muztagata', 7546, 6);
 INSERT INTO public.sommet VALUES (29, 'Yuzhu Peak', 6224, 6);
 INSERT INTO public.sommet VALUES (30, 'Bukadaban Feng', 6860, 6);
+INSERT INTO public.sommet VALUES (3, 'Dôme du Goûter', 4304, 1);
+INSERT INTO public.sommet VALUES (17, 'Pic du Marboré
+', 3248, 4);
+INSERT INTO public.sommet VALUES (18, 'Pic de Perdiguère', 3222, 4);
+INSERT INTO public.sommet VALUES (19, 'Pic de Balaïtous', 3144, 4);
 
 
 --
--- Name: collection_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: chainedemontagne_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.collection_id_seq', 12, true);
+SELECT pg_catalog.setval('public.chainedemontagne_id_seq', 1, false);
 
 
 --
 -- Name: sommet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.sommet_id_seq', 30, true);
+SELECT pg_catalog.setval('public.sommet_id_seq', 1, false);
 
 
 --
--- Name: chainedemontagne collection_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: chainedemontagne chainedemontagne_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.chainedemontagne
-    ADD CONSTRAINT collection_pkey PRIMARY KEY (id);
+    ADD CONSTRAINT chainedemontagne_pkey PRIMARY KEY (id);
 
 
 --
@@ -208,11 +208,11 @@ ALTER TABLE ONLY public.sommet
 
 
 --
--- Name: sommet fk_chainedemontagne_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: sommet fk_id_chainedemontagne; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.sommet
-    ADD CONSTRAINT fk_chainedemontagne_id FOREIGN KEY (id_chainedemontagne) REFERENCES public.chainedemontagne(id) ON UPDATE CASCADE ON DELETE CASCADE NOT VALID;
+    ADD CONSTRAINT fk_id_chainedemontagne FOREIGN KEY (id_chainedemontagne) REFERENCES public.chainedemontagne(id) ON UPDATE CASCADE ON DELETE CASCADE NOT VALID;
 
 
 --
