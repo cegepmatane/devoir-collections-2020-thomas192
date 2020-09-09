@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sun.media.jfxmedia.logging.Logger;
+
 import modele.Sommet;
 
 public class SommetDAO {
@@ -18,9 +20,10 @@ public class SommetDAO {
 		List<Sommet> listeSommets = new ArrayList<Sommet>();
 		
 		try {
-			PreparedStatement requete = connection.prepareStatement("SELECT * FROM sommet FROM id = ?");
+			PreparedStatement requete = connection.prepareStatement("SELECT * FROM sommet WHERE id_chainedemontagne = ?");
 			requete.setInt(1, id);
 			ResultSet curseur = requete.executeQuery();
+			Logger.logMsg(Logger.INFO, "Chaine de montagne id = "+id);
 			while (curseur.next()) {
 				id = curseur.getInt("id");
 				String nom = curseur.getString("nom");
