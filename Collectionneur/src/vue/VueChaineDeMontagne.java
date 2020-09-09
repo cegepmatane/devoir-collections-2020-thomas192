@@ -1,10 +1,16 @@
 package vue;
 
+import java.util.List;
+
 import com.sun.media.jfxmedia.logging.Logger;
 
 import controleur.ControleurChaineDeMontagne;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import modele.ChaineDeMontagne;
+import modele.Sommet;
 
 public class VueChaineDeMontagne extends Vue {
 
@@ -12,24 +18,42 @@ public class VueChaineDeMontagne extends Vue {
 	protected static VueChaineDeMontagne instance = null; 
 	public static VueChaineDeMontagne getInstance() {if(null==instance)instance = new VueChaineDeMontagne();return VueChaineDeMontagne.instance;}; 
 	
-	private VueChaineDeMontagne() 
-	{
+	private VueChaineDeMontagne() {
 		super("chaine_de_montagne.fxml"); 
 		super.controleur = this.controleur = new ControleurChaineDeMontagne();
 		Logger.logMsg(Logger.INFO, "new VueChaineDeMontagne()");
 	}
 		
-	public void activerControles()
-	{
+	public void activerControles() {
 		super.activerControles();
 	}
 	
-	public void afficherChaineDeMontagne(modele.ChaineDeMontagne collection)
-	{
-		TextArea affichageDescription = (TextArea)lookup("#collection-description");
-		affichageDescription.setText(collection.getDescription());
+	public void afficherChaineDeMontagne(ChaineDeMontagne chaineDeMontagne) {
+		Logger.logMsg(Logger.INFO, "VueChaineDeMontagne.afficherChaineDeMontagne()");
+		
+		TextArea affichageDescription = (TextArea)lookup("#description-chaine-de-montagne");
+		affichageDescription.setText(chaineDeMontagne.getDescription());
 
-		Label affichageTitre = (Label)lookup("#titre-page");
-		affichageTitre.setText(collection.getNom());
+		Label affichageNomChaineDeMontagne = (Label)lookup("#chaine-de-montagne-titre");
+		affichageNomChaineDeMontagne.setText(chaineDeMontagne.getNom());
+	}
+	
+	public void afficherSommets(List<Sommet> sommets) {
+		Logger.logMsg(Logger.INFO, "VueChaineDeMontagne.afficherSommets()");
+		
+		VBox vueListeSommets = (VBox)lookup("#liste-sommets");
+		System.out.println(vueListeSommets);
+		vueListeSommets.getChildren().clear();
+		
+		for (Sommet s: sommets) {
+			Logger.logMsg(Logger.INFO, "Sommet "+s.getNom());
+			
+			HBox vueSommet = new HBox();
+			vueSommet.getStyleClass().add("sommet");
+			vueSommet.getChildren().add(new Label(s.getNom()+" ("+s.getAltitude()+"m)"));
+			
+			vueListeSommets.getChildren().add(vueSommet);
+		}
+		
 	}
 }
