@@ -36,9 +36,9 @@ public class VueChainesDeMontagnes extends Vue {
 	
 	public void afficherChainesDeMontagnes(List<ChaineDeMontagne> chainesDeMontagnes)
 	{
-		VBox vueChainesDeMontagnes = (VBox)lookup("#liste-chaines-de-montagnes");
-		System.out.println(vueChainesDeMontagnes);
-		vueChainesDeMontagnes.getChildren().clear();
+		VBox vueListeChainesDeMontagnes = (VBox)lookup("#liste-chaines-de-montagnes");
+		System.out.println(vueListeChainesDeMontagnes);
+		vueListeChainesDeMontagnes.getChildren().clear();
 		
 		for(ChaineDeMontagne c : chainesDeMontagnes)
 		{
@@ -58,13 +58,13 @@ public class VueChainesDeMontagnes extends Vue {
 			});
 			
 			
-			HBox nouvelleChaineDeMontagne = new HBox();
-			nouvelleChaineDeMontagne.setAlignment(Pos.CENTER_LEFT);
-			nouvelleChaineDeMontagne.getStyleClass().add("chaine-de-montagne");
-			nouvelleChaineDeMontagne.getChildren().add(actionConsulter);
-			nouvelleChaineDeMontagne.getChildren().add(new Label(c.getNom()));
+			HBox vueChaineDeMontagne = new HBox();
+			vueChaineDeMontagne.setAlignment(Pos.CENTER_LEFT);
+			vueChaineDeMontagne.getStyleClass().add("chaine-de-montagne");
+			vueChaineDeMontagne.getChildren().add(actionConsulter);
+			vueChaineDeMontagne.getChildren().add(new Label(c.getNom()));
 			
-			vueChainesDeMontagnes.getChildren().add((nouvelleChaineDeMontagne));
+			vueListeChainesDeMontagnes.getChildren().add((vueChaineDeMontagne));
 		}
 		
 	}
