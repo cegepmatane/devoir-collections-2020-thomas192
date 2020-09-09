@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -9,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -49,65 +49,47 @@
                   </Button>
                </children>
             </VBox>
-                <AnchorPane layoutX="151.0" layoutY="60.0" minHeight="0.0" minWidth="0.0" prefHeight="480.0" prefWidth="1085.0" style="-fx-background-color: transparent;">
+                <AnchorPane layoutX="151.0" layoutY="36.0" minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="1085.0" style="-fx-background-color: transparent;">
                      <children>
-                        <FlowPane prefWidth="1085.0">
+                        <FlowPane prefHeight="0.0" prefWidth="1085.0" />
+                        <Pane layoutY="-4.0" prefHeight="207.0" prefWidth="1056.0" styleClass="chaine_de_montagne">
                            <children>
-                              <Pane prefHeight="160.0" prefWidth="1056.0" styleClass="chaine_de_montagne">
-                                 <FlowPane.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
-                                 <children>
-                              <TextArea id="collection-description" layoutX="70.0" layoutY="8.0" prefHeight="143.0" prefWidth="913.0" />
-                                 </children>
-                              </Pane>
-
+                        <TextArea id="description-chaine-de-montagne" layoutX="72.0" layoutY="66.0" prefHeight="108.0" prefWidth="954.0" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextArea>
+                        <Label id="chaine-de-montagne-titre" fx:id="chainedemontagnetitre" layoutX="72.0" layoutY="14.0" prefHeight="49.0" prefWidth="408.0" text="Alpes">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Label>
                            </children>
-                        </FlowPane>
+                        </Pane>
+                  <VBox id="liste-sommets" fx:id="listesommets" layoutX="72.0" layoutY="186.0" prefHeight="403.0" prefWidth="954.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="sommet">
+                           <children>
+                              <Label id="nom-sommet" fx:id="nomsommet" prefHeight="36.0" prefWidth="348.0" text="Mont Blanc (4810m)" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="sommet">
+                           <children>
+                              <Label id="nom-sommet" fx:id="nomsommet1" prefHeight="36.0" prefWidth="348.0" text="Cervin (4478m)" textFill="WHITE">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
                      </children>
                   </AnchorPane>
-            <FlowPane id="resume-des-chaines-de-montagnes" hgap="10.0" layoutX="152.0" layoutY="481.0" prefHeight="130.0" prefWidth="1085.0" vgap="10.0">
-               <children>
-                  <Label alignment="CENTER" prefHeight="62.0" prefWidth="591.0" style="-fx-background-color: ; -fx-text-fill: black;" text="RÉSUMÉ des COLLECTIONS" textOverrun="CLIP">
-                     <font>
-                        <Font name="System Bold" size="44.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@decoration/lune-noire.png" />
-                     </image>
-                  </ImageView>
-                  <Label prefHeight="66.0" prefWidth="393.0" text="17 collections au total" textFill="#3c1700">
-                     <font>
-                        <Font name="Nakula" size="36.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@decoration/lune-noire.png" />
-                     </image>
-                  </ImageView>
-                  <Label prefHeight="66.0" prefWidth="313.0" text="modifié 2020/08/17" textFill="#3c1700">
-                     <font>
-                        <Font name="Nakula" size="36.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@decoration/lune-noire.png" />
-                     </image>
-                  </ImageView>
-                  <Label prefHeight="66.0" prefWidth="344.0" text="7 items par collection" textFill="#3c1700">
-                     <font>
-                        <Font name="Nakula" size="36.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-            </FlowPane>
          </children>
       </AnchorPane>
       <Pane id="entete" layoutX="-3.0" prefHeight="92.0" prefWidth="1171.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -124,7 +106,7 @@
             </ImageView>
             <Pane id="sous-titre" layoutX="576.0" layoutY="22.0" prefHeight="85.0" prefWidth="654.0">
                <children>
-                  <Label id="titre-page" alignment="CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="86.0" prefWidth="654.0" text="CHAINES DE MONTAGNES" textOverrun="CLIP">
+                  <Label alignment="CENTER" layoutX="-1.0" layoutY="-1.0" prefHeight="86.0" prefWidth="654.0" text="CHAINES DE MONTAGNES" textOverrun="CLIP">
                      <font>
                         <Font name="Dyuthi Regular" size="52.0" />
                      </font>

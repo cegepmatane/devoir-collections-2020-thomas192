@@ -53,6 +53,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="chaine-de-montagne">
                      <children>
+                        <Button mnemonicParsing="false" prefHeight="97.0" prefWidth="138.0" styleClass="action-consulter" text="Consulter" />
                         <Label prefHeight="97.0" prefWidth="111.0" styleClass="titre" text="Alpes">
                            <font>
                               <Font size="31.0" />
@@ -61,12 +62,11 @@
                               <Insets />
                            </opaqueInsets>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="97.0" prefWidth="138.0" styleClass="action-consulter" text="Consulter" />
                      </children>
                   </HBox>
                </children>
             </VBox>
-            <FlowPane id="resume-des-chaines-de-montagnes" hgap="10.0" layoutX="767.0" layoutY="138.0" prefHeight="359.0" prefWidth="488.0" vgap="10.0">
+            <FlowPane id="resume-des-chaines-de-montagnes" hgap="10.0" layoutX="767.0" layoutY="100.0" prefHeight="359.0" prefWidth="488.0" vgap="10.0">
                <children>
                   <Label alignment="CENTER" prefHeight="65.0" prefWidth="475.0" style="-fx-background-color: none; -fx-text-fill: black;" text="RÉSUMÉ" textOverrun="CLIP">
                      <font>
@@ -75,7 +75,7 @@
                   </Label>
                   <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@decoration/lune-noire.png" />
+                        <Image url="@decoration/montagne.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="66.0" prefWidth="418.0" text="6 chaines de montagnes" textFill="#3c1700">
@@ -85,7 +85,7 @@
                   </Label>
                   <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@decoration/lune-noire.png" />
+                        <Image url="@decoration/montagne.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="66.0" prefWidth="377.0" text="30 sommets" textFill="#3c1700">
@@ -95,7 +95,7 @@
                   </Label>
                   <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@decoration/lune-noire.png" />
+                        <Image url="@decoration/montagne.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="66.0" prefWidth="365.0" text="5 sommets par chaine" textFill="#3c1700">
