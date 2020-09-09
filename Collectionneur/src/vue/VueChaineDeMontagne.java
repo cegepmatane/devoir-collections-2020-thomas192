@@ -5,6 +5,9 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import controleur.ControleurChaineDeMontagne;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
@@ -48,8 +51,11 @@ public class VueChaineDeMontagne extends Vue {
 		for (Sommet s: sommets) {
 			Logger.logMsg(Logger.INFO, "Sommet "+s.getNom());
 			
+			Button actionModifier = new Button("Modifier");
+			
 			HBox vueSommet = new HBox();
 			vueSommet.getStyleClass().add("sommet");
+			vueSommet.getChildren().add(actionModifier);
 			vueSommet.getChildren().add(new Label(s.getNom()+" ("+s.getAltitude()+"m)"));
 			
 			vueListeSommets.getChildren().add(vueSommet);

@@ -123,6 +123,20 @@ https://commons.wikimedia.org/wiki/File:Corner_Ornament_Black_Down_Right.svg
 	-fx-font-weight: bold;
 }
 
+#liste-sommets .sommet Button
+{
+// button style from http://fxexperience.com/2011/12/styling-fx-buttons-with-css/
+	-fx-background-color: 
+        #c3c4c4,
+        linear-gradient(#d6d6d6 50%, white 100%),
+        radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+    -fx-font-size: 18px;
+}
+
 ScrollPane,
 ScrollPane > .viewport
 {
