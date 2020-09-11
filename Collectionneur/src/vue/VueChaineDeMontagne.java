@@ -18,6 +18,8 @@ import modele.Sommet;
 public class VueChaineDeMontagne extends Vue {
 
 	protected ControleurChaineDeMontagne controleur;
+	public ControleurChaineDeMontagne getControleur() {return this.controleur;}
+	
 	protected static VueChaineDeMontagne instance = null; 
 	public static VueChaineDeMontagne getInstance() {if(null==instance)instance = new VueChaineDeMontagne();return VueChaineDeMontagne.instance;}; 
 	

@@ -8,9 +8,6 @@ import vue.Navigateur;
 import vue.VueChaineDeMontagne;
 
 public class ControleurChainesDeMontagnes extends Controleur {
-	
-	protected ChaineDeMontagneDAO chaineDeMontagneDAO = new ChaineDeMontagneDAO();
-	protected SommetDAO sommetDAO = new SommetDAO();
 
 	public ControleurChainesDeMontagnes() {
 		Logger.logMsg(Logger.INFO, "new ControleurChainesDeMontagnes()");
@@ -21,10 +18,7 @@ public class ControleurChainesDeMontagnes extends Controleur {
 		
 		Logger.logMsg(Logger.INFO, "ControleurChainesDeMontagnes.actionConsulterChaineDeMontagne("+id+")");
 		
-		VueChaineDeMontagne.getInstance().afficherChaineDeMontagne(chaineDeMontagneDAO.detaillerChaineDeMontagne(id));
-		VueChaineDeMontagne.getInstance().afficherSommets(sommetDAO.listerSommetsParChaineDeMontagne(id));
-		
-		Navigateur.getInstance().afficherVue(VueChaineDeMontagne.getInstance());
+		VueChaineDeMontagne.getInstance().getControleur().actionConsulterChaineDeMontagne(id);
 	}
 
 }
