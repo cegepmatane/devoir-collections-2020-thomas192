@@ -18,6 +18,7 @@ public abstract class Navigateur extends Application{ // Application de javafx e
 		Logger.setLevel(Logger.INFO);
 		VueChainesDeMontagnes.getInstance().activerControles();
 		VueChaineDeMontagne.getInstance().activerControles();
+		VueAjouterSommet.getInstance().activerControles();
 	}
 	
 	public void afficherVue(Vue vue)
