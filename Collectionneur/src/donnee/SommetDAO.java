@@ -44,4 +44,19 @@ public class SommetDAO {
 		return listeSommets;
 	}
 	
+	public void ajouterSommet(Sommet sommet) {
+		
+		Connection connection = BaseDeDonnees.getInstance().getConnection();
+		
+		try {
+			PreparedStatement requete = connection.prepareStatement("INSERT INTO sommet(nom,altitude) VALUES(?,?)");
+			requete.setString(1, sommet.getNom());
+			requete.setInt(2, sommet.getAltitude());
+			requete.execute();
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+	}
+	
 }
