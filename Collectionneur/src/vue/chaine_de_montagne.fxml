@@ -64,6 +64,11 @@
                               <Font size="33.0" />
                            </font>
                         </Label>
+                        <Button id="action-ajouter-sommet" fx:id="actionAjouterSommet" layoutX="168.0" layoutY="17.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="135.0" text="AJOUTER">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
                            </children>
                         </Pane>
                   <VBox id="liste-sommets" fx:id="listesommets" layoutX="72.0" layoutY="186.0" prefHeight="403.0" prefWidth="954.0" spacing="10.0">
