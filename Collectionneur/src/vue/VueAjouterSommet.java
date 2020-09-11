@@ -25,6 +25,7 @@ public class VueAjouterSommet extends Vue {
 		super.activerControles();
 		
 		Button actionAjouterSommet = (Button)lookup("#action-ajouter-sommet");
+		
 		actionAjouterSommet.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {

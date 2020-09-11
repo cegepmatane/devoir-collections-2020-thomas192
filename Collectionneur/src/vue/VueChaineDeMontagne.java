@@ -37,6 +37,7 @@ public class VueChaineDeMontagne extends Vue {
 		actionAfficherVueAjouterSommet.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
+				Logger.logMsg(Logger.INFO, "Clic sur afficher vue ajouter sommet");
 				controleur.actionAfficherVueAjouterSommet();
 			}});
 	}
