@@ -2,18 +2,20 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="fenetre" prefHeight="743.0" prefWidth="1294.0" stylesheets="@decoration/chaines_de_montagnes.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="fenetre" prefHeight="743.0" prefWidth="1294.0" stylesheets="@decoration/chaines-de-montagnes.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane id="espace" layoutY="92.0" prefHeight="651.0" prefWidth="1294.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="92.0">
          <children>
@@ -52,47 +54,49 @@
                 <AnchorPane layoutX="151.0" layoutY="36.0" minHeight="0.0" minWidth="0.0" prefHeight="599.0" prefWidth="1085.0" style="-fx-background-color: transparent;">
                      <children>
                         <FlowPane prefHeight="0.0" prefWidth="1085.0" />
-                        <Pane layoutY="-4.0" prefHeight="207.0" prefWidth="1056.0" styleClass="chaine_de_montagne">
+                        <Pane layoutY="81.0" prefHeight="282.0" prefWidth="1056.0" styleClass="chaine_de_montagne">
                            <children>
-                        <TextArea id="description-chaine-de-montagne" layoutX="72.0" layoutY="66.0" prefHeight="108.0" prefWidth="954.0" wrapText="true">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextArea>
-                        <Label id="chaine-de-montagne-titre" fx:id="chainedemontagnetitre" layoutX="72.0" layoutY="14.0" prefHeight="49.0" prefWidth="408.0" text="Alpes">
+                        <Label id="chaine-de-montagne-titre" fx:id="chainedemontagnetitre" alignment="CENTER" prefHeight="49.0" prefWidth="1056.0" text="Ajouter un sommet">
                            <font>
                               <Font size="33.0" />
                            </font>
                         </Label>
-                        <Button id="action-ajouter-sommet" fx:id="actionAjouterSommet" layoutX="168.0" layoutY="17.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="135.0" text="AJOUTER">
+                        <GridPane hgap="10.0" layoutX="76.0" layoutY="97.0" prefWidth="961.0" vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="472.3333740234375" minWidth="10.0" prefWidth="175.3333740234375" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="798.6666361490885" minWidth="10.0" prefWidth="779.3332926432291" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label prefHeight="32.0" prefWidth="340.0" text="Nom">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="nom-sommet" fx:id="nomSommet" prefWidth="683.0" GridPane.columnIndex="1" />
+                              <Label prefHeight="17.0" prefWidth="360.0" text="Altitude" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <TextField id="altitude-sommet" fx:id="altitudeSommet" prefWidth="683.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Label id="nom-chaine-de-montagne" fx:id="nomChaineDeMontagne" alignment="CENTER" layoutX="406.0" layoutY="42.0" prefHeight="27.0" prefWidth="244.0" text="Alpes">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button id="action-ajouter-sommet" fx:id="actionAjouterSommet" layoutX="461.0" layoutY="212.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="135.0" text="AJOUTER">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Button>
                            </children>
                         </Pane>
-                  <VBox id="liste-sommets" fx:id="listesommets" layoutX="72.0" layoutY="186.0" prefHeight="403.0" prefWidth="954.0" spacing="10.0">
-                     <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="sommet">
-                           <children>
-                              <Label id="nom-sommet" fx:id="nomsommet" prefHeight="36.0" prefWidth="348.0" text="Mont Blanc (4810m)" textFill="WHITE">
-                                 <font>
-                                    <Font size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" styleClass="sommet">
-                           <children>
-                              <Label id="nom-sommet" fx:id="nomsommet1" prefHeight="36.0" prefWidth="348.0" text="Cervin (4478m)" textFill="WHITE">
-                                 <font>
-                                    <Font size="25.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
                      </children>
                   </AnchorPane>
          </children>
