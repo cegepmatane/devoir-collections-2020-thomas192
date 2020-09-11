@@ -90,7 +90,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button id="action-ajouter-sommet" fx:id="actionAjouterSommet" layoutX="461.0" layoutY="212.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="135.0" text="AJOUTER">
+                        <Button id="action-ajouter-sommet" fx:id="actionAjouterSommet" layoutX="461.0" layoutY="212.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="135.0" text="Ajouter">
                            <font>
                               <Font size="15.0" />
                            </font>

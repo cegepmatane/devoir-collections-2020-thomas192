@@ -64,7 +64,7 @@
                               <Font size="33.0" />
                            </font>
                         </Label>
-                        <Button id="action-ajouter-sommet" fx:id="actionAjouterSommet" layoutX="891.0" layoutY="17.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="135.0" text="AJOUTER">
+                        <Button id="action-afficher-vue-ajouter-sommet" fx:id="actionAfficherVueAjouterSommet" layoutX="891.0" layoutY="17.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="135.0" text="AJOUTER">
                            <font>
                               <Font size="15.0" />
                            </font>

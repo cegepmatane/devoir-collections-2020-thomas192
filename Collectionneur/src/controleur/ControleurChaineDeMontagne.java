@@ -11,8 +11,10 @@ public class ControleurChaineDeMontagne extends Controleur{
 		Logger.logMsg(Logger.INFO, "new ControleurChaineDeMontagne()");
 	}
 	
-	public void notifierClicAjouterSommet() {
-		//Navigateur.getInstance().afficherVueAjouter(VueAjouterSommet.getInstance());
+	public void actionAfficherVueAjouterSommet() {
+		Logger.logMsg(Logger.INFO, "ControleurChainesDeMontagnes.actionAfficherVueAjouterSommet()");
+		
+		Navigateur.getInstance().afficherVue(VueAjouterSommet.getInstance());
 	}
 
 }

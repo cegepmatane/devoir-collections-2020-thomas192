@@ -30,13 +30,12 @@ public class VueChaineDeMontagne extends Vue {
 	public void activerControles() {
 		super.activerControles();
 
-		Button actionAjouterSommet = (Button)lookup("#action-ajouter-sommet");
+		Button actionAfficherVueAjouterSommet = (Button)lookup("#action-afficher-vue-ajouter-sommet");
 		
-		actionAjouterSommet.setOnAction(new EventHandler<ActionEvent>() {
-
+		actionAfficherVueAjouterSommet.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				controleur.notifierClicAjouterSommet();
+				controleur.actionAfficherVueAjouterSommet();
 			}});
 	}
 	

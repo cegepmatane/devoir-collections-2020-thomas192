@@ -7,19 +7,17 @@ import donnee.SommetDAO;
 import vue.Navigateur;
 import vue.VueChaineDeMontagne;
 
-public class ControleurChainesDeMontagnes extends Controleur{
+public class ControleurChainesDeMontagnes extends Controleur {
 	
 	protected ChaineDeMontagneDAO chaineDeMontagneDAO = new ChaineDeMontagneDAO();
 	protected SommetDAO sommetDAO = new SommetDAO();
 
-	public ControleurChainesDeMontagnes()
-	{
+	public ControleurChainesDeMontagnes() {
 		Logger.logMsg(Logger.INFO, "new ControleurChainesDeMontagnes()");
 	}
 	
 	// RECEPTION des EVENEMENTS
-	public void actionConsulterChaineDeMontagne(int id)
-	{
+	public void actionConsulterChaineDeMontagne(int id) {
 		
 		Logger.logMsg(Logger.INFO, "ControleurChainesDeMontagnes.actionConsulterChaineDeMontagne("+id+")");
 		
