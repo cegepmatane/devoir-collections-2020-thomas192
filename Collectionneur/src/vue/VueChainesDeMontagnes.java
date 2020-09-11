@@ -22,26 +22,22 @@ public class VueChainesDeMontagnes extends Vue {
 	protected static VueChainesDeMontagnes instance = null; 
 	public static VueChainesDeMontagnes getInstance() {if(null==instance)instance = new VueChainesDeMontagnes();return VueChainesDeMontagnes.instance;}; 
 	
-	private VueChainesDeMontagnes() 
-	{
+	private VueChainesDeMontagnes() {
 		super("chaines-de-montagnes.fxml"); 
 		super.controleur = this.controleur = new ControleurChainesDeMontagnes();
 		Logger.logMsg(Logger.INFO, "new VueChainesDeMontagnes()");
 	}
 		
-	public void activerControles()
-	{
+	public void activerControles() {
 		super.activerControles();
 	}
 	
-	public void afficherChainesDeMontagnes(List<ChaineDeMontagne> chainesDeMontagnes)
-	{
+	public void afficherChainesDeMontagnes(List<ChaineDeMontagne> chainesDeMontagnes) {
 		VBox vueListeChainesDeMontagnes = (VBox)lookup("#liste-chaines-de-montagnes");
 		System.out.println(vueListeChainesDeMontagnes);
 		vueListeChainesDeMontagnes.getChildren().clear();
 		
-		for(ChaineDeMontagne c : chainesDeMontagnes)
-		{
+		for(ChaineDeMontagne c : chainesDeMontagnes) {
 			
 			Logger.logMsg(Logger.INFO,"Chaine de montagne recue par la vue : " + c.getNom());
 			
