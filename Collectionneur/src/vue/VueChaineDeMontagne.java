@@ -29,6 +29,15 @@ public class VueChaineDeMontagne extends Vue {
 		
 	public void activerControles() {
 		super.activerControles();
+
+		Button actionAjouterChaineDeMontagne = (Button)lookup("action-ajouter-chaine-de-montagne");
+		
+		actionAjouterChaineDeMontagne.setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent e) {
+				controleur.notifierClicAjouterChaineDeMontagne();
+			}});
 	}
 	
 	public void afficherChaineDeMontagne(ChaineDeMontagne chaineDeMontagne) {

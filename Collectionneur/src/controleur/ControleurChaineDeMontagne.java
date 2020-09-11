@@ -9,5 +9,9 @@ public class ControleurChaineDeMontagne extends Controleur{
 	public ControleurChaineDeMontagne() {
 		Logger.logMsg(Logger.INFO, "new ControleurChaineDeMontagne()");
 	}
+	
+	public void notifierClicAjouterChaineDeMontagne() {
+		//Navigateur.getInstance().afficherVueAjouter(VueAjouterChaineDeMontagne.getInstance());
+	}
 
 }
