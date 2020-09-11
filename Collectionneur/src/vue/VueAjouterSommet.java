@@ -12,4 +12,8 @@ public class VueAjouterSommet extends Vue {
 		Logger.logMsg(Logger.INFO, "new VueAjouterSommet()");
 	}
 	
+	public void activerControles() {
+		super.activerControles();
+	}
+	
 }
