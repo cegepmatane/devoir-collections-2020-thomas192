@@ -10,7 +10,7 @@ public class ControleurChaineDeMontagne extends Controleur{
 		Logger.logMsg(Logger.INFO, "new ControleurChaineDeMontagne()");
 	}
 	
-	public void notifierClicAjouterChaineDeMontagne() {
+	public void notifierClicAjouterSommet() {
 		//Navigateur.getInstance().afficherVueAjouter(VueAjouterChaineDeMontagne.getInstance());
 	}
 
