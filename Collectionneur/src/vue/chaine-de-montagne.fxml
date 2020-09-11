@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="fenetre" prefHeight="743.0" prefWidth="1294.0" stylesheets="@decoration/chaines_de_montagnes.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="fenetre" prefHeight="743.0" prefWidth="1294.0" stylesheets="@decoration/chaines-de-montagnes.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane id="espace" layoutY="92.0" prefHeight="651.0" prefWidth="1294.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="92.0">
          <children>
@@ -64,7 +64,7 @@
                               <Font size="33.0" />
                            </font>
                         </Label>
-                        <Button id="action-ajouter-sommet" fx:id="actionAjouterSommet" layoutX="168.0" layoutY="17.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="135.0" text="AJOUTER">
+                        <Button id="action-ajouter-sommet" fx:id="actionAjouterSommet" layoutX="891.0" layoutY="17.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="135.0" text="AJOUTER">
                            <font>
                               <Font size="15.0" />
                            </font>

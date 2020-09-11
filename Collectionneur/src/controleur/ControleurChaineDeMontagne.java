@@ -3,6 +3,7 @@ package controleur;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import vue.Navigateur;
+import vue.VueAjouterSommet;
 
 public class ControleurChaineDeMontagne extends Controleur{
 
@@ -11,7 +12,7 @@ public class ControleurChaineDeMontagne extends Controleur{
 	}
 	
 	public void notifierClicAjouterSommet() {
-		//Navigateur.getInstance().afficherVueAjouter(VueAjouterChaineDeMontagne.getInstance());
+		//Navigateur.getInstance().afficherVueAjouter(VueAjouterSommet.getInstance());
 	}
 
 }

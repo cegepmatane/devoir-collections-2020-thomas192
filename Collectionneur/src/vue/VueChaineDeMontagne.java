@@ -22,7 +22,7 @@ public class VueChaineDeMontagne extends Vue {
 	public static VueChaineDeMontagne getInstance() {if(null==instance)instance = new VueChaineDeMontagne();return VueChaineDeMontagne.instance;}; 
 	
 	private VueChaineDeMontagne() {
-		super("chaine_de_montagne.fxml"); 
+		super("chaine-de-montagne.fxml"); 
 		super.controleur = this.controleur = new ControleurChaineDeMontagne();
 		Logger.logMsg(Logger.INFO, "new VueChaineDeMontagne()");
 	}
@@ -30,7 +30,7 @@ public class VueChaineDeMontagne extends Vue {
 	public void activerControles() {
 		super.activerControles();
 
-		Button actionAjouterSommet = (Button)lookup("action-ajouter-sommet");
+		Button actionAjouterSommet = (Button)lookup("#action-ajouter-sommet");
 		
 		actionAjouterSommet.setOnAction(new EventHandler<ActionEvent>() {
 

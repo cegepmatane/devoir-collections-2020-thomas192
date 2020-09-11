@@ -24,7 +24,7 @@ public class VueChainesDeMontagnes extends Vue {
 	
 	private VueChainesDeMontagnes() 
 	{
-		super("chaines_de_montagnes.fxml"); 
+		super("chaines-de-montagnes.fxml"); 
 		super.controleur = this.controleur = new ControleurChainesDeMontagnes();
 		Logger.logMsg(Logger.INFO, "new VueChainesDeMontagnes()");
 	}
