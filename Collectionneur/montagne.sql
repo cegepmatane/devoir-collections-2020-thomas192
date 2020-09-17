@@ -144,37 +144,37 @@ INSERT INTO public.chainedemontagne VALUES (6, 'Cordillère du Kunlun', 'La cord
 -- Data for Name: sommet; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.sommet VALUES (1, 'Mont Blanc', 4810, 1);
+INSERT INTO public.sommet VALUES (5, 'Aconcagua', 6959, 2);
+INSERT INTO public.sommet VALUES (6, 'Pissis ', 6882, 2);
+INSERT INTO public.sommet VALUES (7, 'Ojos del Salado', 6864, 2);
+INSERT INTO public.sommet VALUES (9, 'Mercedario ', 6770, 2);
+INSERT INTO public.sommet VALUES (13, 'Makalu', 8462, 3);
+INSERT INTO public.sommet VALUES (14, 'Nanga Parbat', 8125, 3);
+INSERT INTO public.sommet VALUES (15, 'Vignemale ', 3298, 4);
+INSERT INTO public.sommet VALUES (16, 'Pic de Taillon', 3144, 4);
+INSERT INTO public.sommet VALUES (17, 'Pic Gannett', 4207, 5);
+INSERT INTO public.sommet VALUES (18, 'Pic Borah', 3861, 5);
+INSERT INTO public.sommet VALUES (19, 'Mont Elbert', 4401, 5);
+INSERT INTO public.sommet VALUES (20, 'Mont Robson', 3954, 5);
+INSERT INTO public.sommet VALUES (21, 'Mont Columbia', 3747, 5);
+INSERT INTO public.sommet VALUES (22, 'Kongur', 7649, 6);
+INSERT INTO public.sommet VALUES (23, 'Ulugh Muztagh', 6973, 6);
+INSERT INTO public.sommet VALUES (24, 'Muztagata', 7546, 6);
+INSERT INTO public.sommet VALUES (25, 'Yuzhu Peak', 6224, 6);
+INSERT INTO public.sommet VALUES (26, 'Bukadaban Feng', 6860, 6);
+INSERT INTO public.sommet VALUES (27, 'Dôme du Goûter', 4304, 1);
+INSERT INTO public.sommet VALUES (28, 'Pic du Marboré', 3248, 4);
+INSERT INTO public.sommet VALUES (29, 'Pic de Perdiguère', 3222, 4);
+INSERT INTO public.sommet VALUES (30, 'Pic de Balaïtous', 3144, 4);
+INSERT INTO public.sommet VALUES (10, 'Everest', 8848, 3);
+INSERT INTO public.sommet VALUES (11, 'Kangchenjunga', 8586, 3);
+INSERT INTO public.sommet VALUES (12, 'Lhotse', 8501, 3);
+INSERT INTO public.sommet VALUES (8, 'Tupungato ', 6800, 2);
+INSERT INTO public.sommet VALUES (38, 'Weissmies', 4017, 1);
 INSERT INTO public.sommet VALUES (2, 'Mont Maudit', 4465, 1);
-INSERT INTO public.sommet VALUES (4, 'Mont Blanc du Tacul', 4248, 1);
-INSERT INTO public.sommet VALUES (5, 'Grande Rocheuse', 4102, 1);
-INSERT INTO public.sommet VALUES (6, 'Aconcagua', 6959, 2);
-INSERT INTO public.sommet VALUES (7, 'Pissis ', 6882, 2);
-INSERT INTO public.sommet VALUES (8, 'Ojos del Salado', 6864, 2);
-INSERT INTO public.sommet VALUES (9, 'Tupungato ', 6800, 2);
-INSERT INTO public.sommet VALUES (10, 'Mercedario ', 6770, 2);
-INSERT INTO public.sommet VALUES (11, 'Everest', 8848, 3);
-INSERT INTO public.sommet VALUES (12, 'Kangchenjunga', 8586, 3);
-INSERT INTO public.sommet VALUES (13, 'Lhotse', 8501, 3);
-INSERT INTO public.sommet VALUES (14, 'Makalu', 8462, 3);
-INSERT INTO public.sommet VALUES (15, 'Nanga Parbat', 8125, 3);
-INSERT INTO public.sommet VALUES (16, 'Vignemale ', 3298, 4);
-INSERT INTO public.sommet VALUES (20, 'Pic de Taillon', 3144, 4);
-INSERT INTO public.sommet VALUES (21, 'Pic Gannett', 4207, 5);
-INSERT INTO public.sommet VALUES (22, 'Pic Borah', 3861, 5);
-INSERT INTO public.sommet VALUES (23, 'Mont Elbert', 4401, 5);
-INSERT INTO public.sommet VALUES (24, 'Mont Robson', 3954, 5);
-INSERT INTO public.sommet VALUES (25, 'Mont Columbia', 3747, 5);
-INSERT INTO public.sommet VALUES (26, 'Kongur', 7649, 6);
-INSERT INTO public.sommet VALUES (27, 'Ulugh Muztagh', 6973, 6);
-INSERT INTO public.sommet VALUES (28, 'Muztagata', 7546, 6);
-INSERT INTO public.sommet VALUES (29, 'Yuzhu Peak', 6224, 6);
-INSERT INTO public.sommet VALUES (30, 'Bukadaban Feng', 6860, 6);
-INSERT INTO public.sommet VALUES (3, 'Dôme du Goûter', 4304, 1);
-INSERT INTO public.sommet VALUES (17, 'Pic du Marboré
-', 3248, 4);
-INSERT INTO public.sommet VALUES (18, 'Pic de Perdiguère', 3222, 4);
-INSERT INTO public.sommet VALUES (19, 'Pic de Balaïtous', 3144, 4);
+INSERT INTO public.sommet VALUES (4, 'Grande Rocheuse', 4102, 1);
+INSERT INTO public.sommet VALUES (1, 'Mont Blanc', 4810, 1);
+INSERT INTO public.sommet VALUES (3, 'Mont Blanc du Tacul', 4248, 1);
 
 
 --
@@ -188,7 +188,7 @@ SELECT pg_catalog.setval('public.chainedemontagne_id_seq', 1, false);
 -- Name: sommet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.sommet_id_seq', 1, false);
+SELECT pg_catalog.setval('public.sommet_id_seq', 38, true);
 
 
 --
@@ -208,11 +208,11 @@ ALTER TABLE ONLY public.sommet
 
 
 --
--- Name: sommet fk_id_chainedemontagne; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: sommet fk_chaindemontagne_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.sommet
-    ADD CONSTRAINT fk_id_chainedemontagne FOREIGN KEY (id_chainedemontagne) REFERENCES public.chainedemontagne(id) ON UPDATE CASCADE ON DELETE CASCADE NOT VALID;
+    ADD CONSTRAINT fk_chaindemontagne_id FOREIGN KEY (id_chainedemontagne) REFERENCES public.chainedemontagne(id) NOT VALID;
 
 
 --
