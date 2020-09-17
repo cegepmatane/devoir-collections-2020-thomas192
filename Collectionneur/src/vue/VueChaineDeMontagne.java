@@ -60,15 +60,24 @@ public class VueChaineDeMontagne extends Vue {
 		System.out.println(vueListeSommets);
 		vueListeSommets.getChildren().clear();
 		
-		for (Sommet s: sommets) {
-			Logger.logMsg(Logger.INFO, "Sommet "+s.getNom());
+		for (Sommet sommet: sommets) {
+			Logger.logMsg(Logger.INFO, "Sommet "+sommet.getNom());
 			
 			Button actionModifier = new Button("Modifier");
+			actionModifier.setId(sommet.getId()+"");
+			actionModifier.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent e) {
+					Button source = (Button)e.getSource();
+					Logger.logMsg(Logger.INFO, "Clic sur le sommet " + source.getId());
+					controleur.actionAfficherVueModifierSommet(Integer.parseInt(source.getId()));
+				}
+			});
 			
 			HBox vueSommet = new HBox();
 			vueSommet.getStyleClass().add("sommet");
 			vueSommet.getChildren().add(actionModifier);
-			vueSommet.getChildren().add(new Label(s.getNom()+" ("+s.getAltitude()+"m)"));
+			vueSommet.getChildren().add(new Label(sommet.getNom()+" ("+sommet.getAltitude()+"m)"));
 			
 			vueListeSommets.getChildren().add(vueSommet);
 		}
