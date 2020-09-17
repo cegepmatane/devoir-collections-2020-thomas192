@@ -11,6 +11,7 @@ import modele.Sommet;
 import vue.Navigateur;
 import vue.VueAjouterSommet;
 import vue.VueChaineDeMontagne;
+import vue.VueModifierSommet;
 
 public class ControleurChaineDeMontagne extends Controleur {
 	
@@ -52,6 +53,12 @@ public class ControleurChaineDeMontagne extends Controleur {
 		this.sommets.add(sommet);
 		VueChaineDeMontagne.getInstance().afficherSommets(sommets);
 		Navigateur.getInstance().afficherVue(VueChaineDeMontagne.getInstance());
+	}
+	
+	public void actionAfficherVueModifierSommet(int id) {
+		Logger.logMsg(Logger.INFO, "ControleurChaineDeMontagne.actionAfficherVueModifierSommet("+id+")");
+		
+		Navigateur.getInstance().afficherVue(VueModifierSommet.getInstance());
 	}
 
 }
