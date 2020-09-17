@@ -6,7 +6,9 @@ import controleur.ControleurChaineDeMontagne;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import modele.ChaineDeMontagne;
 import modele.Sommet;
 
 public class VueModifierSommet extends Vue {
@@ -30,7 +32,7 @@ public class VueModifierSommet extends Vue {
 			@Override
 			public void handle(ActionEvent e) {
 				Logger.logMsg(Logger.INFO, "Clic sur ajouter sommet");
-				//controleur.actionModifierSommet();
+				controleur.actionModifierSommet();
 				
 			}});
 	}
@@ -41,6 +43,18 @@ public class VueModifierSommet extends Vue {
 		sommet.setNom(nom.getText());
 	
 		return sommet;
+	}
+	
+	public void afficherSommet(Sommet sommet) {
+		TextField champsNom = (TextField)lookup("#nom-sommet");
+		champsNom.setText(sommet.getNom());
+		TextField champsAltitude = (TextField)lookup("#altitude-sommet");
+		champsAltitude.setText(String.valueOf(sommet.getAltitude()));
+	}
+	
+	public void afficherChaineDeMontagne(ChaineDeMontagne chaineDeMontagne) {
+		Label labelNomChaineDeMontagne = (Label)lookup("#nom-chaine-de-montagne");
+		labelNomChaineDeMontagne.setText(chaineDeMontagne.getNom());
 	}
 	
 }
