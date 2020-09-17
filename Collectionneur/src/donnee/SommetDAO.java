@@ -58,5 +58,22 @@ public class SommetDAO {
 			e.printStackTrace();
 		}
 	}
+
+	public void modifierSommet(Sommet sommet) {
+		
+		Connection connection = BaseDeDonnees.getInstance().getConnection();
+		
+		try {
+			PreparedStatement requete = connection.prepareStatement("UPDATE sommet SET nom = ?, altitude = ? WHERE id = ?");
+			requete.setString(1, sommet.getNom());
+			requete.setInt(2, sommet.getAltitude());
+			requete.setInt(3, sommet.getId());
+			requete.execute();
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
 	
 }
