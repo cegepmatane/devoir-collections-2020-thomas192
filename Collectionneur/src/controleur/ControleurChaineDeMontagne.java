@@ -47,7 +47,11 @@ public class ControleurChaineDeMontagne extends Controleur {
 		Logger.logMsg(Logger.INFO, "ControleurChainesDeMontagnes.actionAjouterSommet()");
 		
 		Sommet sommet = VueAjouterSommet.getInstance().lireSommet();
-		sommet.setIdChaineDeMontagne(chaineDeMontagne.getId());
+		sommet.setIdChaineDeMontagne(this.chaineDeMontagne.getId());
+		
+		Logger.logMsg(Logger.INFO, "Informations sur le sommet qui va être ajouté : "+sommet.getNom()+
+				" "+sommet.getAltitude()+" "+sommet.getIdChaineDeMontagne());
+		
 		SommetDAO sommetDAO = new SommetDAO();
 		sommetDAO.ajouterSommet(sommet);
 		this.sommets.add(sommet);

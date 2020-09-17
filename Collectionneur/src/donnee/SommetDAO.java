@@ -73,9 +73,11 @@ public class SommetDAO {
 		Connection connection = BaseDeDonnees.getInstance().getConnection();
 		
 		try {
-			PreparedStatement requete = connection.prepareStatement("INSERT INTO sommet(nom,altitude) VALUES(?,?)");
+			PreparedStatement requete = connection.prepareStatement("INSERT INTO sommet(nom,altitude,id_chainedemontagne) "
+					+ "VALUES(?,?,?)");
 			requete.setString(1, sommet.getNom());
 			requete.setInt(2, sommet.getAltitude());
+			requete.setInt(3, sommet.getIdChaineDeMontagne());
 			requete.execute();
 		} catch (SQLException e) {
 			
