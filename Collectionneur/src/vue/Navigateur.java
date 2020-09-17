@@ -19,6 +19,7 @@ public abstract class Navigateur extends Application{ // Application de javafx e
 		VueChainesDeMontagnes.getInstance().activerControles();
 		VueChaineDeMontagne.getInstance().activerControles();
 		VueAjouterSommet.getInstance().activerControles();
+		VueModifierSommet.getInstance().activerControles();
 		VueModifierSommet.getInstance().controleur = VueAjouterSommet.getInstance().controleur = VueChaineDeMontagne.getInstance().controleur;
 	}
 	

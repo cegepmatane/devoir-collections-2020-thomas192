@@ -31,7 +31,7 @@ public class VueModifierSommet extends Vue {
 		actionAjouterSommet.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
-				Logger.logMsg(Logger.INFO, "Clic sur ajouter sommet");
+				Logger.logMsg(Logger.INFO, "Clic sur modifier sommet");
 				controleur.actionModifierSommet();
 				
 			}});
@@ -41,6 +41,10 @@ public class VueModifierSommet extends Vue {
 		Sommet sommet = new Sommet();
 		TextField nom = (TextField)lookup("#nom-sommet");
 		sommet.setNom(nom.getText());
+		TextField altitude = (TextField)lookup("#altitude-sommet");
+		sommet.setAltitude(Integer.valueOf(altitude.getText()));
+		Logger.logMsg(Logger.INFO, "Nouveau nom : "+sommet.getNom()+" nouvelle altitude : "+sommet.getAltitude());
+
 	
 		return sommet;
 	}

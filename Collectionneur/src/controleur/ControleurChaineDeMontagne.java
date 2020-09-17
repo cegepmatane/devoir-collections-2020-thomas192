@@ -52,13 +52,38 @@ public class ControleurChaineDeMontagne extends Controleur {
 		sommetDAO.ajouterSommet(sommet);
 		this.sommets.add(sommet);
 		VueChaineDeMontagne.getInstance().afficherSommets(sommets);
+		
 		Navigateur.getInstance().afficherVue(VueChaineDeMontagne.getInstance());
 	}
 	
+	protected Sommet sommet;
 	public void actionAfficherVueModifierSommet(int id) {
+		SommetDAO sommetDAO = new SommetDAO();
+		this.sommet = sommetDAO.detaillerSommet(id);
+		
 		Logger.logMsg(Logger.INFO, "ControleurChaineDeMontagne.actionAfficherVueModifierSommet("+id+")");
+		VueModifierSommet.getInstance().afficherSommet(sommet);
+		VueModifierSommet.getInstance().afficherChaineDeMontagne(chaineDeMontagne);
 		
 		Navigateur.getInstance().afficherVue(VueModifierSommet.getInstance());
+	}
+	
+	public void actionModifierSommet() {
+		Logger.logMsg(Logger.INFO, "ControleurChainesDeMontagnes.actionModifierSommet()");
+		
+		Sommet sommet = VueModifierSommet.getInstance().lireSommet();
+		sommet.setIdChaineDeMontagne(chaineDeMontagne.getId());
+		sommet.setId(this.sommet.getId());
+		
+		Logger.logMsg(Logger.INFO, "Informations sur le sommet qui va être modifié : "+sommet.getId()+" "+sommet.getNom()+
+				" "+sommet.getAltitude()+" "+sommet.getIdChaineDeMontagne());
+		
+		SommetDAO sommetDAO = new SommetDAO();
+		sommetDAO.modifierSommet(sommet);
+		this.sommets = sommetDAO.listerSommetsParChaineDeMontagne(chaineDeMontagne.getId()); // A optimiser plus tard
+		VueChaineDeMontagne.getInstance().afficherSommets(sommets);
+		
+		Navigateur.getInstance().afficherVue(VueChaineDeMontagne.getInstance());
 	}
 
 }
